@@ -1,0 +1,157 @@
+{
+    "author":"Danilo Toro - Rocketbot - <danilo.toro@rocketbot.cl>",
+    "description": "Módulo para dividir y juntar pdfs",
+    "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+    "version":"0.1",
+    "license": "MIT",
+    "homepage":"http://rockertbot.cl",
+    "linux": true,
+    "windows":true,
+    "mac":true,
+    "docker":true,
+    "name": "SplitPdfMerge",
+    "dependencies": {
+        "PyPDF2": "1.26.0"
+    },
+    "title": {
+        "en": "SplitPdfMerge",
+        "es": "SplitPdfMerge",
+        "cn": "SplitPdfMerge"
+    },
+    "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDEyOCAxNzAiIGhlaWdodD0iMTcwcHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMjggMTcwIiB3aWR0aD0iMTI4cHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxwYXRoIGQ9Ik02My43OTgsMTIxSDU5djIyaDUuNDIyYzMuNzA5LDAsNi41Ni0xLjAyMyw4LjU1NC0yLjg5NmMxLjk5My0xLjg3MSwyLjk5LTQuNjM3LDIuOTktOC4yMDcgICBzLTAuOTk3LTYuMjAyLTIuOTktOC4xMjdDNzAuOTgxLDEyMS44NDYsNjcuOTIzLDEyMSw2My43OTgsMTIxeiIgZmlsbD0iIzIzMUYyMCIvPjxwYXRoIGQ9Ik0zNy43MjEsMTIyLjEzNmMtMS4yNjctMC44ODQtMy4yMzMtMS4xMzYtNS45MDItMS4xMzZIMjd2MTJoNS42NWMyLjcwNCwwLDQuNTQxLTAuNjI2LDUuNTEyLTEuNzE4ICAgYzAuOTcxLTEuMDkzLDEuNDU2LTIuNjMxLDEuNDU2LTQuNzI5QzM5LjYxOCwxMjQuNDU2LDM4Ljk4NSwxMjMuMDIsMzcuNzIxLDEyMi4xMzZ6IiBmaWxsPSIjMjMxRjIwIi8+PHBhdGggZD0iTTEyNy42MTMsMjlsMC4wMDQtMC4wMDRMOTksMC4zNzlWMGgtMC4zNzlsLTAuMTE3LTAuMTE3TDk4LjM4NywwSDEwQzQuNDc4LDAsMCw0LjQ3NywwLDEwdjE1MCAgIGMwLDUuNTIzLDQuNDc4LDEwLDEwLDEwaDEwOGM1LjUyMiwwLDEwLTQuNDc3LDEwLTEwVjI5SDEyNy42MTN6IE00NC4wMTMsMTM2LjgxMUM0MS4zOTUsMTM4Ljg5LDM3LjM5OSwxNDAsMzIuMDI2LDE0MEgyN3YxMGgtOCAgIHYtMzZoMTIuOTIzYzUuNTgxLDAsOS42NDYsMC45MSwxMi4xOTMsMy4wNzZjMi41NDgsMi4xNjcsMy44MjIsNS40NDMsMy44MjIsOS45MzJDNDcuOTM4LDEzMS40OTgsNDYuNjMsMTM0LjczLDQ0LjAxMywxMzYuODExeiAgICBNNzkuMDYsMTQ1LjA2MUM3NS42OCwxNDguMzU0LDcwLjUyMiwxNTAsNjMuNTksMTUwSDUxdi0zNmgxMy4wMDZjNi40ODEsMCwxMS40NTcsMS40MTIsMTQuOTI0LDQuNTg0ICAgYzMuNDY2LDMuMTcyLDUuMiw3LjQ5Niw1LjIsMTMuMTQ2Qzg0LjEzLDEzNy4zODIsODIuNDM5LDE0MS43NjgsNzkuMDYsMTQ1LjA2MXogTTExMywxMjFIOTZ2OGgxNnY3SDk2djE0aC04di0zNmgyNVYxMjF6IE0xMDksMjkgICBjLTUuNTIyLDAtMTAtNC40NzctMTAtMTBWNC42MjJMMTIzLjM3OSwyOUgxMDl6IiBmaWxsPSIjMjMxRjIwIi8+PC9nPjwvc3ZnPg==",
+    "children": [
+        {
+            "en": {
+                "title": "Split Pdf",
+                "description": "Split PDF",
+                "title_options": null,
+                "options":null
+            },
+            "es": {
+                "title": "Dividir pdf",
+                "description": "Divide un pdf ",
+                "title_options": null,
+                "options":null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+
+                    {
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "C:/Users/User/Downloads/sample.pdf",
+                            "en": "C:/Users/User/Downloads/sample.pdf",
+                            "cn": "C:/Users/User/Downloads/sample.pdf"
+                        },
+                        "title": {
+                            "es": "PDF de entrada:",
+                            "en": "Path to PDF:"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "C:/Users/User/Desktop/PDF",
+                            "en": "C:/Users/User/Desktop/PDF "
+                        },
+                        "title": {
+                            "es": "Path y nombre de la carpeta donde guardar el pdf",
+                            "en": "Path and name of the folder where to save the pdf"
+                        },
+
+                        "id": "folder",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "1",
+                            "en": "1"
+                        },
+                        "title": {
+                            "es": "Cada cuantas páginas dividir",
+                            "en": "Every few pages divide"
+                        },
+                        "id": "step",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIHZpZXdCb3g9IjAgMCA0OSA2NCIgd2lkdGg9IjQ5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZGVmcz48c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2UyODUwMDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMyB7CiAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogI2ZmY2Y4YjsKICAgICAgfQogICAgPC9zdHlsZT48L2RlZnM+PGc+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDkuMDAwLDE2Ljg0MiBMNDkuMDAwLDU4Ljk0NyBDNDkuMDAwLDYxLjczOCA0Ni43MzAsNjQuMDAwIDQzLjkzMSw2NC4wMDAgTDUuMDY5LDY0LjAwMCBDMi4yNjksNjQuMDAwIC0wLjAwMCw2MS43MzggLTAuMDAwLDU4Ljk0NyBMLTAuMDAwLDUuMDUzIEMtMC4wMDAsMi4yNjIgMi4yNjksLTAuMDAwIDUuMDY5LC0wLjAwMCBMMzIuMTAzLC0wLjAwMCBMNDkuMDAwLDE2Ljg0MiBaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMzYuOTQ5LDQ4LjE4MiBDMzYuMTY5LDQ4LjgwMCAzNC45MTcsNDkuMTA5IDMzLjE5Miw0OS4xMDkgQzMxLjc3MCw0OS4xMDkgMzAuNTI3LDQ4LjgzOCAyOS40NjIsNDguMjk1IEwzMC4xNTIsNDYuMzg2IEMzMS4xMzgsNDYuODQ0IDMyLjE1Miw0Ny4wNzQgMzMuMTkyLDQ3LjA3NCBDMzQuMTYwLDQ3LjA3NCAzNC44MzMsNDYuOTM1IDM1LjIxMiw0Ni42NTggQzM1LjU5MCw0Ni4zODAgMzUuNzc5LDQ1LjkxMyAzNS43NzksNDUuMjU1IEwzNS43NzksNDQuNDc3IEMzNS4wMDQsNDUuMTgzIDM0LjA2OSw0NS41MzYgMzIuOTc0LDQ1LjUzNiBDMzEuODEzLDQ1LjUzNiAzMC44OTksNDUuMTIwIDMwLjIzNCw0NC4yODggQzI5LjU2OCw0My40NTUgMjkuMjM1LDQyLjI1OCAyOS4yMzUsNDAuNjk2IEMyOS4yMzUsMzkuNzE5IDI5LjM5MSwzOC44NTggMjkuNzAzLDM4LjExNCBDMzAuMDE0LDM3LjM2OSAzMC40NzEsMzYuNzkzIDMxLjA3MywzNi4zODYgQzMxLjY3NSwzNS45NzkgMzIuNDAzLDM1Ljc3NSAzMy4yNTYsMzUuNzc1IEMzMy43NTgsMzUuNzc1IDM0LjI2MCwzNS44ODUgMzQuNzYyLDM2LjEwNSBDMzUuMjY0LDM2LjMyNiAzNS42ODUsMzYuNjA0IDM2LjAyNCwzNi45NDIgTDM2LjMzMiwzNi4wNDcgTDM4LjEyMCwzNi4wNDcgTDM4LjEyMCw0NS4zNTUgQzM4LjEyMCw0Ni42MjEgMzcuNzMwLDQ3LjU2NCAzNi45NDksNDguMTgyIFpNMzUuNzc5LDM4LjY3OSBDMzUuMTM3LDM4LjExMiAzNC40MzksMzcuODI5IDMzLjY4MiwzNy44MjkgQzMzLjExNCwzNy44MjkgMzIuNjMzLDM4LjA4OCAzMi4yMzksMzguNjA3IEMzMS44NDYsMzkuMTI1IDMxLjY0OSwzOS44MTAgMzEuNjQ5LDQwLjY2MCBDMzEuNjQ5LDQxLjYyNSAzMS44MjMsNDIuMzM3IDMyLjE3MSw0Mi43OTUgQzMyLjUxOSw0My4yNTMgMzIuOTcxLDQzLjQ4MiAzMy41MjgsNDMuNDgyIEMzNC4zMDIsNDMuNDgyIDM1LjA1Myw0My4xNzIgMzUuNzc5LDQyLjU1MSBMMzUuNzc5LDM4LjY3OSBaTTI2LjE0MCw0NS4yMDEgQzI1LjU2Niw0NS42MTEgMjQuODc5LDQ1LjgxNiAyNC4wODAsNDUuODE2IEMyMy4wMjgsNDUuODE2IDIyLjEyOSw0NS40ODggMjEuMzg1LDQ0LjgzMCBMMjEuMzg1LDQ5LjEwOSBMMTkuMDQ0LDQ5LjEwOSBMMTkuMDQ0LDM2LjA0NyBMMjEuMjAzLDM2LjA0NyBMMjEuMjAzLDM2Ljk3OCBDMjEuNjM5LDM2LjYwNCAyMi4wOTcsMzYuMzEwIDIyLjU3OCwzNi4wOTYgQzIzLjA1OSwzNS44ODIgMjMuNjExLDM1Ljc3NSAyNC4yMzUsMzUuNzc1IEMyNS40MzksMzUuNzc1IDI2LjM1NSwzNi4xOTcgMjYuOTg0LDM3LjA0MiBDMjcuNjE0LDM3Ljg4NiAyNy45MjgsMzkuMTEzIDI3LjkyOCw0MC43MjMgQzI3LjkyOCw0MS43NDMgMjcuNzc0LDQyLjY0MSAyNy40NjUsNDMuNDE5IEMyNy4xNTcsNDQuMTk3IDI2LjcxNSw0NC43OTEgMjYuMTQwLDQ1LjIwMSBaTTI1LjAzMywzOC42MDIgQzI0LjcxMiwzOC4wODYgMjQuMjM1LDM3LjgyOSAyMy41OTksMzcuODI5IEMyMy4yMTgsMzcuODI5IDIyLjgyNiwzNy45MTggMjIuNDI0LDM4LjA5NSBDMjIuMDIyLDM4LjI3MyAyMS42NzUsMzguNDkyIDIxLjM4NSwzOC43NTEgTDIxLjM4NSw0Mi45MDMgQzIxLjYzMyw0My4xMjcgMjEuOTQwLDQzLjMyNCAyMi4zMDYsNDMuNDk2IEMyMi42NzIsNDMuNjY4IDIzLjA0OSw0My43NTQgMjMuNDM2LDQzLjc1NCBDMjQuMDc3LDQzLjc1NCAyNC41ODQsNDMuNDgxIDI0Ljk1Niw0Mi45MzUgQzI1LjMyOCw0Mi4zODkgMjUuNTE0LDQxLjY2NCAyNS41MTQsNDAuNzYwIEMyNS41MTQsMzkuODM3IDI1LjM1NCwzOS4xMTggMjUuMDMzLDM4LjYwMiBaTTE1LjU5NSwzNC42NDQgQzE1LjA5OCwzNC42NDQgMTQuNzYwLDM0LjU0MiAxNC41NzgsMzQuMzM3IEMxNC4zOTcsMzQuMTMyIDE0LjMwNiwzMy44MzkgMTQuMzA2LDMzLjQ1OSBDMTQuMzA2LDMzLjAzNyAxNC40MDMsMzIuNzM0IDE0LjU5NiwzMi41NTAgQzE0Ljc5MCwzMi4zNjYgMTUuMTIzLDMyLjI3NCAxNS41OTUsMzIuMjc0IEMxNi4wNjYsMzIuMjc0IDE2LjQwNCwzMi4zNjMgMTYuNjA2LDMyLjU0MSBDMTYuODA5LDMyLjcxOSAxNi45MTAsMzMuMDI1IDE2LjkxMCwzMy40NTkgQzE2LjkxMCwzMy45MDAgMTYuODAyLDM0LjIwNyAxNi41ODQsMzQuMzgyIEMxNi4zNjYsMzQuNTU3IDE2LjAzNiwzNC42NDQgMTUuNTk1LDM0LjY0NCBaTTE0LjQ0MiwzNi4wNDcgTDE2Ljc4MywzNi4wNDcgTDE2Ljc4Myw0NS45NDMgQzE2Ljc4Myw0Ny4wNzcgMTYuNTI5LDQ3Ljg4OCAxNi4wMjEsNDguMzc2IEMxNS41MTMsNDguODY1IDE0LjY4MSw0OS4xMDkgMTMuNTI1LDQ5LjEwOSBDMTMuMjY1LDQ5LjEwOSAxMi45MjMsNDkuMDgwIDEyLjUwMCw0OS4wMjMgQzEyLjA3Niw0OC45NjYgMTEuNzUwLDQ4LjkwNCAxMS41MjAsNDguODM4IEwxMi4wMjgsNDYuODExIEMxMi40NzAsNDYuOTg2IDEyLjkyNiw0Ny4wNzQgMTMuMzk4LDQ3LjA3NCBDMTMuODcwLDQ3LjA3NCAxNC4xNjIsNDYuOTI5IDE0LjI3NCw0Ni42MzkgQzE0LjM4Niw0Ni4zNTAgMTQuNDQyLDQ1Ljg3MSAxNC40NDIsNDUuMjAxIEwxNC40NDIsMzYuMDQ3IFoiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik00OS4wMDAsMTUuODk5IEw0OS4wMDAsMTcuOTk1IEwzNS4xODcsMTcuOTk1IEMzMi4zMjcsMTcuOTk1IDMxLjAwOCwxNS42NzUgMzEuMDA4LDEyLjgxNCBMMzEuMDA4LC0wLjAwMCBMMzMuMTAwLC0wLjAwMCBMNDkuMDAwLDE1Ljg5OSBaIi8+PC9nPjwvc3ZnPg==",
+            "module": "split_pdf",
+            "module_name": "SplitPdfMerge",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows":true,
+            "mac":true,
+            "docker":true
+        },
+        {
+            "en": {
+                "title": "Merge Pdf",
+                "description": "Merge PDFs ",
+                "title_options": null,
+                "options":null
+            },
+            "es": {
+                "title": "Combinar pdfs",
+                "description": "Combina pdfs en un pdf común",
+                "title_options": null,
+                "options":null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "C:/Users/User/Desktop/PDF",
+                            "en": "C:/Users/User/Desktop/PDF"
+                        },
+                        "title": {
+                            "es": "Ruta de la carpeta con los pdfs",
+                            "en": "Folder path with pdfs"
+                        },
+
+                        "id": "pdfs_folder",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "file_new",
+                        "placeholder": {
+                            "es": "C:/Users/User/Desktop/PDF/merge.pdf",
+                            "en": "C:/Users/User/Desktop/PDF/merge.pdf"
+                        },
+                        "title": {
+                            "es": "Path y nombre del archivo donde guardar el pdf",
+                            "en": "Path and name of the file where to save the pdf"
+                        },
+
+                        "id": "output_folder",
+                        "css": "col-md-12"
+                    }
+
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQiIHZpZXdCb3g9IjAgMCA0OSA2NCIgd2lkdGg9IjQ5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48ZGVmcz48c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2UyODUwMDsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMyB7CiAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogI2ZmY2Y4YjsKICAgICAgfQogICAgPC9zdHlsZT48L2RlZnM+PGc+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDkuMDAwLDE2Ljg0MiBMNDkuMDAwLDU4Ljk0NyBDNDkuMDAwLDYxLjczOCA0Ni43MzAsNjQuMDAwIDQzLjkzMSw2NC4wMDAgTDUuMDY5LDY0LjAwMCBDMi4yNjksNjQuMDAwIC0wLjAwMCw2MS43MzggLTAuMDAwLDU4Ljk0NyBMLTAuMDAwLDUuMDUzIEMtMC4wMDAsMi4yNjIgMi4yNjksLTAuMDAwIDUuMDY5LC0wLjAwMCBMMzIuMTAzLC0wLjAwMCBMNDkuMDAwLDE2Ljg0MiBaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMzYuOTQ5LDQ4LjE4MiBDMzYuMTY5LDQ4LjgwMCAzNC45MTcsNDkuMTA5IDMzLjE5Miw0OS4xMDkgQzMxLjc3MCw0OS4xMDkgMzAuNTI3LDQ4LjgzOCAyOS40NjIsNDguMjk1IEwzMC4xNTIsNDYuMzg2IEMzMS4xMzgsNDYuODQ0IDMyLjE1Miw0Ny4wNzQgMzMuMTkyLDQ3LjA3NCBDMzQuMTYwLDQ3LjA3NCAzNC44MzMsNDYuOTM1IDM1LjIxMiw0Ni42NTggQzM1LjU5MCw0Ni4zODAgMzUuNzc5LDQ1LjkxMyAzNS43NzksNDUuMjU1IEwzNS43NzksNDQuNDc3IEMzNS4wMDQsNDUuMTgzIDM0LjA2OSw0NS41MzYgMzIuOTc0LDQ1LjUzNiBDMzEuODEzLDQ1LjUzNiAzMC44OTksNDUuMTIwIDMwLjIzNCw0NC4yODggQzI5LjU2OCw0My40NTUgMjkuMjM1LDQyLjI1OCAyOS4yMzUsNDAuNjk2IEMyOS4yMzUsMzkuNzE5IDI5LjM5MSwzOC44NTggMjkuNzAzLDM4LjExNCBDMzAuMDE0LDM3LjM2OSAzMC40NzEsMzYuNzkzIDMxLjA3MywzNi4zODYgQzMxLjY3NSwzNS45NzkgMzIuNDAzLDM1Ljc3NSAzMy4yNTYsMzUuNzc1IEMzMy43NTgsMzUuNzc1IDM0LjI2MCwzNS44ODUgMzQuNzYyLDM2LjEwNSBDMzUuMjY0LDM2LjMyNiAzNS42ODUsMzYuNjA0IDM2LjAyNCwzNi45NDIgTDM2LjMzMiwzNi4wNDcgTDM4LjEyMCwzNi4wNDcgTDM4LjEyMCw0NS4zNTUgQzM4LjEyMCw0Ni42MjEgMzcuNzMwLDQ3LjU2NCAzNi45NDksNDguMTgyIFpNMzUuNzc5LDM4LjY3OSBDMzUuMTM3LDM4LjExMiAzNC40MzksMzcuODI5IDMzLjY4MiwzNy44MjkgQzMzLjExNCwzNy44MjkgMzIuNjMzLDM4LjA4OCAzMi4yMzksMzguNjA3IEMzMS44NDYsMzkuMTI1IDMxLjY0OSwzOS44MTAgMzEuNjQ5LDQwLjY2MCBDMzEuNjQ5LDQxLjYyNSAzMS44MjMsNDIuMzM3IDMyLjE3MSw0Mi43OTUgQzMyLjUxOSw0My4yNTMgMzIuOTcxLDQzLjQ4MiAzMy41MjgsNDMuNDgyIEMzNC4zMDIsNDMuNDgyIDM1LjA1Myw0My4xNzIgMzUuNzc5LDQyLjU1MSBMMzUuNzc5LDM4LjY3OSBaTTI2LjE0MCw0NS4yMDEgQzI1LjU2Niw0NS42MTEgMjQuODc5LDQ1LjgxNiAyNC4wODAsNDUuODE2IEMyMy4wMjgsNDUuODE2IDIyLjEyOSw0NS40ODggMjEuMzg1LDQ0LjgzMCBMMjEuMzg1LDQ5LjEwOSBMMTkuMDQ0LDQ5LjEwOSBMMTkuMDQ0LDM2LjA0NyBMMjEuMjAzLDM2LjA0NyBMMjEuMjAzLDM2Ljk3OCBDMjEuNjM5LDM2LjYwNCAyMi4wOTcsMzYuMzEwIDIyLjU3OCwzNi4wOTYgQzIzLjA1OSwzNS44ODIgMjMuNjExLDM1Ljc3NSAyNC4yMzUsMzUuNzc1IEMyNS40MzksMzUuNzc1IDI2LjM1NSwzNi4xOTcgMjYuOTg0LDM3LjA0MiBDMjcuNjE0LDM3Ljg4NiAyNy45MjgsMzkuMTEzIDI3LjkyOCw0MC43MjMgQzI3LjkyOCw0MS43NDMgMjcuNzc0LDQyLjY0MSAyNy40NjUsNDMuNDE5IEMyNy4xNTcsNDQuMTk3IDI2LjcxNSw0NC43OTEgMjYuMTQwLDQ1LjIwMSBaTTI1LjAzMywzOC42MDIgQzI0LjcxMiwzOC4wODYgMjQuMjM1LDM3LjgyOSAyMy41OTksMzcuODI5IEMyMy4yMTgsMzcuODI5IDIyLjgyNiwzNy45MTggMjIuNDI0LDM4LjA5NSBDMjIuMDIyLDM4LjI3MyAyMS42NzUsMzguNDkyIDIxLjM4NSwzOC43NTEgTDIxLjM4NSw0Mi45MDMgQzIxLjYzMyw0My4xMjcgMjEuOTQwLDQzLjMyNCAyMi4zMDYsNDMuNDk2IEMyMi42NzIsNDMuNjY4IDIzLjA0OSw0My43NTQgMjMuNDM2LDQzLjc1NCBDMjQuMDc3LDQzLjc1NCAyNC41ODQsNDMuNDgxIDI0Ljk1Niw0Mi45MzUgQzI1LjMyOCw0Mi4zODkgMjUuNTE0LDQxLjY2NCAyNS41MTQsNDAuNzYwIEMyNS41MTQsMzkuODM3IDI1LjM1NCwzOS4xMTggMjUuMDMzLDM4LjYwMiBaTTE1LjU5NSwzNC42NDQgQzE1LjA5OCwzNC42NDQgMTQuNzYwLDM0LjU0MiAxNC41NzgsMzQuMzM3IEMxNC4zOTcsMzQuMTMyIDE0LjMwNiwzMy44MzkgMTQuMzA2LDMzLjQ1OSBDMTQuMzA2LDMzLjAzNyAxNC40MDMsMzIuNzM0IDE0LjU5NiwzMi41NTAgQzE0Ljc5MCwzMi4zNjYgMTUuMTIzLDMyLjI3NCAxNS41OTUsMzIuMjc0IEMxNi4wNjYsMzIuMjc0IDE2LjQwNCwzMi4zNjMgMTYuNjA2LDMyLjU0MSBDMTYuODA5LDMyLjcxOSAxNi45MTAsMzMuMDI1IDE2LjkxMCwzMy40NTkgQzE2LjkxMCwzMy45MDAgMTYuODAyLDM0LjIwNyAxNi41ODQsMzQuMzgyIEMxNi4zNjYsMzQuNTU3IDE2LjAzNiwzNC42NDQgMTUuNTk1LDM0LjY0NCBaTTE0LjQ0MiwzNi4wNDcgTDE2Ljc4MywzNi4wNDcgTDE2Ljc4Myw0NS45NDMgQzE2Ljc4Myw0Ny4wNzcgMTYuNTI5LDQ3Ljg4OCAxNi4wMjEsNDguMzc2IEMxNS41MTMsNDguODY1IDE0LjY4MSw0OS4xMDkgMTMuNTI1LDQ5LjEwOSBDMTMuMjY1LDQ5LjEwOSAxMi45MjMsNDkuMDgwIDEyLjUwMCw0OS4wMjMgQzEyLjA3Niw0OC45NjYgMTEuNzUwLDQ4LjkwNCAxMS41MjAsNDguODM4IEwxMi4wMjgsNDYuODExIEMxMi40NzAsNDYuOTg2IDEyLjkyNiw0Ny4wNzQgMTMuMzk4LDQ3LjA3NCBDMTMuODcwLDQ3LjA3NCAxNC4xNjIsNDYuOTI5IDE0LjI3NCw0Ni42MzkgQzE0LjM4Niw0Ni4zNTAgMTQuNDQyLDQ1Ljg3MSAxNC40NDIsNDUuMjAxIEwxNC40NDIsMzYuMDQ3IFoiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik00OS4wMDAsMTUuODk5IEw0OS4wMDAsMTcuOTk1IEwzNS4xODcsMTcuOTk1IEMzMi4zMjcsMTcuOTk1IDMxLjAwOCwxNS42NzUgMzEuMDA4LDEyLjgxNCBMMzEuMDA4LC0wLjAwMCBMMzMuMTAwLC0wLjAwMCBMNDkuMDAwLDE1Ljg5OSBaIi8+PC9nPjwvc3ZnPg==",
+            "module": "merge_pdf",
+            "module_name": "SplitPdfMerge",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows":true,
+            "mac":true,
+            "docker":true
+        }
+    ]
+}
