@@ -24,9 +24,14 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 
-from PyPDF2 import PdfFileReader, PdfFileWriter
 import os
 import glob
+
+base_path = tmp_global_obj["basepath"]
+cur_path = base_path + 'modules' + os.sep + 'SplitPdfMerge' + os.sep + 'libs' + os.sep
+sys.path.append(cur_path)
+
+from PyPDF2 import PdfFileReader, PdfFileWriter
 
 """
     Obtengo el modulo que fueron invocados
