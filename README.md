@@ -9,7 +9,7 @@ Module to split and merge PDF file
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Split_PDF_Merge/master/example/pdfs.png)
 
-<h2>Dependences</h2>
+<h2>Dependencies</h2>
 
 <ul>
   <li>
