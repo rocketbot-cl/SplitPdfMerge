@@ -9,6 +9,11 @@ Module to split and merge PDF file
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Split_PDF_Merge/master/example/pdfs.png)
 
+<strong>Video Example:</strong>
+
+[![SplitPdfMerge](https://img.youtube.com/vi/MdyZ_nLfLQY/0.jpg)](https://www.youtube.com/watch?v=MdyZ_nLfLQY "SplitPdfMerge")
+
+
 <h2>Dependencies</h2>
 
 <ul>
