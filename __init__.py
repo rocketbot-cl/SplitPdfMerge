@@ -69,12 +69,12 @@ if module == "split_pdf":
 
 if module == "merge_pdf":
 
-    input = GetParams("pdfs_folder")
+    input_ = GetParams("pdfs_folder")
     output = GetParams("output_folder")
 
     output += ".pdf"
     pdf_writer = PdfFileWriter()
-    pdfs = glob.glob(input + os.sep + "*.pdf")
+    pdfs = glob.glob(input_ + os.sep + "*.pdf")
     pdfs.sort()
     print(pdfs)
 
@@ -86,3 +86,23 @@ if module == "merge_pdf":
 
         with open(output, 'wb') as fh:
             pdf_writer.write(fh)
+
+if module == "encrypt_pdf":
+    path = GetParams("path")
+    out = GetParams("out")
+    password = GetParams("pass")
+
+    try:
+        with open(path, "rb") as pdf:
+            input_pdf = PdfFileReader(pdf)
+
+            output = PdfFileWriter()
+            output.appendPagesFromReader(input_pdf)
+            output.encrypt(password)
+
+            with open(out, "wb") as out_pdf:
+                output.write(out_pdf)
+
+    except Exception as e:
+        PrintException()
+        raise e

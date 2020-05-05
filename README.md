@@ -1,6 +1,11 @@
 # Split_PDF_Merge
 Module to split and merge PDF file
 
+## Commands
+
+<ul>
+    <li>Split PDF</li><li>Merge PDF</li><li>Encrypt PDF</li>
+</ul>
 
 **In the example robot you must change the URL for yours.
 
