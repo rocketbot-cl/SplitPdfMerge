@@ -4,7 +4,7 @@
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
     "version":"0.1",
     "license": "MIT",
-    "homepage":"http://rockertbot.cl",
+    "homepage":"http://rocketbot.co/",
     "linux": true,
     "windows":true,
     "mac":true,
@@ -40,19 +40,13 @@
                     {
                         "type": "file_select",
                         "placeholder": {
-                            "es": "PDF",
-                            "en": "PDF",
-                            "cn": "PDF"
+                            "es": "C:/Users/User/Downloads/sample.pdf",
+                            "en": "C:/Users/User/Downloads/sample.pdf",
+                            "cn": "C:/Users/User/Downloads/sample.pdf"
                         },
                         "title": {
                             "es": "PDF de entrada:",
-                            "en": "PDF de entrada:",
-                            "cn": "PDF de entrada:"
-                        },
-                        "help": {
-                            "es": "Path donde se encuentra el PDF a convertir",
-                            "en": "Path donde se encuentra el PDF a convertir",
-                            "cn": "Path donde se encuentra el PDF a convertir"
+                            "en": "Path to PDF:"
                         },
                         "id": "pdf",
                         "css": "col-md-12"
@@ -60,9 +54,8 @@
                     {
                         "type": "folder_select",
                         "placeholder": {
-                            "es": "Carpeta: ",
-                            "en": "Folder: ",
-                            "cn": "Folder: "
+                            "es": "C:/Users/User/Desktop/PDF",
+                            "en": "C:/Users/User/Desktop/PDF "
                         },
                         "title": {
                             "es": "Path y nombre de la carpeta donde guardar el pdf",
@@ -74,12 +67,16 @@
                     },
                     {
                         "type": "input",
+                        "placeholder": {
+                            "es": "1",
+                            "en": "1"
+                        },
                         "title": {
                             "es": "Cada cuantas páginas dividir",
                             "en": "Every few pages divide"
                         },
                         "id": "step",
-                        "css": "col-md-6"
+                        "css": "col-md-12"
                     }
                 ]
             },
@@ -115,9 +112,8 @@
                     {
                         "type": "folder_select",
                         "placeholder": {
-                            "es": "Carpeta: ",
-                            "en": "Folder: ",
-                            "cn": "Folder: "
+                            "es": "C:/Users/User/Desktop/PDF",
+                            "en": "C:/Users/User/Desktop/PDF"
                         },
                         "title": {
                             "es": "Ruta de la carpeta con los pdfs",
@@ -130,9 +126,8 @@
                     {
                         "type": "file_new",
                         "placeholder": {
-                            "es": "Carpeta: ",
-                            "en": "Folder: ",
-                            "cn": "Folder: "
+                            "es": "C:/Users/User/Desktop/PDF/merge.pdf",
+                            "en": "C:/Users/User/Desktop/PDF/merge.pdf"
                         },
                         "title": {
                             "es": "Path y nombre del archivo donde guardar el pdf",
