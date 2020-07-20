@@ -106,3 +106,28 @@ if module == "encrypt_pdf":
     except Exception as e:
         PrintException()
         raise e
+
+if module == "read_pdf":
+    path = GetParams("path")
+    password = GetParams("pass")
+    result = GetParams("result")
+
+    try:
+        text = ""
+        with open(path, "rb") as pdf:
+            reader = PdfFileReader(pdf)
+
+            if reader.isEncrypted:
+                reader.decrypt(password)
+            print(reader)
+
+            page_number = reader.numPages
+
+            for i in range(page_number):
+                page = reader.getPage(i)
+                text += page.extractText()
+
+        SetVar(result, text)
+    except Exception as e:
+        PrintException()
+        raise e
