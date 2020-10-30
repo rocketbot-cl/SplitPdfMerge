@@ -131,3 +131,30 @@ if module == "read_pdf":
     except Exception as e:
         PrintException()
         raise e
+
+if module == "decrypt_pdf":
+
+    in_path = GetParams("in_path")
+    pass_pdf = GetParams("pass_pdf")
+    out_path = GetParams("out_path")
+
+    try:
+        out = PdfFileWriter()
+        file = PdfFileReader(in_path)
+
+        if file.isEncrypted:
+
+            file.decrypt(pass_pdf)
+            for idx in range(file.numPages):
+                page = file.getPage(idx)
+                out.addPage(page)
+
+            with open(out_path, "wb") as f:
+                out.write(f)
+
+            print("File decrypted Successfully.")
+        else:
+            print("File already decrypted.")
+    except Exception as e:
+        PrintException()
+        raise e
