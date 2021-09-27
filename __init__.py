@@ -29,7 +29,10 @@ import glob
 
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + 'SplitPdfMerge' + os.sep + 'libs' + os.sep
-sys.path.append(cur_path)
+if cur_path not in sys.path:
+    sys.path = [cur_path] + sys.path
+    
+
 
 from PyPDF2 import PdfFileReader, PdfFileWriter
 
@@ -139,22 +142,30 @@ if module == "decrypt_pdf":
     out_path = GetParams("out_path")
 
     try:
-        out = PdfFileWriter()
-        file = PdfFileReader(in_path)
+        try:
+            out = PdfFileWriter()
+            file = PdfFileReader(in_path, password=pass_pdf)
+            if file.isEncrypted:
 
-        if file.isEncrypted:
+                file.decrypt('')
+                for idx in range(file.numPages):
+                    page = file.getPage(idx)
+                    out.addPage(page)
 
-            file.decrypt(pass_pdf)
-            for idx in range(file.numPages):
-                page = file.getPage(idx)
-                out.addPage(page)
+                with open(out_path, "wb") as f:
+                    out.write(f)
 
-            with open(out_path, "wb") as f:
-                out.write(f)
+                print("File decrypted Successfully.")
+            else:
+                print("File already decrypted.")
+        except:
+            import subprocess
+            FNULL = open(os.devnull, 'w')    #use this if you want to suppress output to stdout from the subprocess
+            bin_path = cur_path + os.sep + "bin_qpdf" + os.sep + "qpdf"
+            args = bin_path  + " --decrypt --password={pass_pdf} {in_path} {out_path} ".format(pass_pdf=pass_pdf, in_path=in_path, out_path=out_path)
+            subprocess.call(args, stdout=FNULL, stderr=FNULL, shell=False)
 
-            print("File decrypted Successfully.")
-        else:
-            print("File already decrypted.")
+
     except Exception as e:
         PrintException()
         raise e
