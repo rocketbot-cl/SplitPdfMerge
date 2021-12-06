@@ -169,3 +169,30 @@ if module == "decrypt_pdf":
     except Exception as e:
         PrintException()
         raise e
+
+if (module == "SplitPdfMergeSpecificStep"):
+    path = GetParams("pdf").replace("/", os.sep)
+    folder = GetParams("folder")
+    step = GetParams("step")
+    step = eval(step)
+    fname = os.path.splitext(os.path.basename(path))[0]
+    pdf = PdfFileReader(path)
+    page_number = pdf.getNumPages()
+
+    try:
+        for each in step:
+
+            realStep = each.split("-")
+            pdf_writer = PdfFileWriter()
+
+            for page in range((int(realStep[0])) - 1, int(realStep[1])):
+                pdf_writer.addPage(pdf.getPage(page))
+                output_filename = '{}_page_{}.pdf'.format(fname, f"{realStep[0]}-{realStep[1]}")
+
+            with open(folder + os.sep + output_filename, 'wb') as out:
+                pdf_writer.write(out)
+                print('Created: {}'.format(output_filename))
+
+    except Exception as e:
+        PrintException()
+        raise e
