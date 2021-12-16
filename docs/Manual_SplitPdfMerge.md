@@ -6,7 +6,7 @@
   
 Módulo para dividir y juntar pdfs  
   
-![banner](/docs/imgs/Banner_SplitPdfMerge.png)
+![banner](imgs/Banner_SplitPdfMerge.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
