@@ -19,22 +19,22 @@ In order to use this module, you have to select the PDF/s to use and execute the
 
 
 1. Split Pdf  
-Split PDF
+Split PDF into differents files.
 
 2. Merge Pdf  
-Merge PDFs 
+Merge differents PDFs into one single file.
 
 3. Encrypt Pdf  
-Add password to a PDF
+Add password to a PDF.
 
 4. Read Encrypted Pdf  
-Read a pdf with password
+Read a pdf with password.
 
 5. Decrypt Pdf  
-Decrypt PDF with a password
+Decrypt PDF with a password.
 
 6. Split Pdf in specific steps  
-Splits the pdf in a certain pace  
+Splits the pdf in a certain pace.
 
 
 
