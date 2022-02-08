@@ -35,6 +35,40 @@ if cur_path not in sys.path:
 
 
 from PyPDF2 import PdfFileReader, PdfFileWriter
+global txt
+
+def reset_eof_of_pdf_return_stream(pdf_stream_in:list):
+    # find the line position of the EOF
+    for i, x in enumerate(txt[::-1]):
+        if b'%%EOF' in x:
+            actual_line = len(pdf_stream_in)-i
+            print(f'EOF found at line position {-i} = actual {actual_line}, with value {x}')
+            break
+
+    # return the list up to that point
+    return pdf_stream_in[:actual_line]
+
+# # opens the file for reading
+# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'rb') as p:
+#     txt = (p.readlines())
+
+# # get the new list terminating correctly
+# txtx = reset_eof_of_pdf_return_stream(txt)
+
+# # write to new pdf
+# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'wb') as f:
+#     f.writelines(txtx)
+
+# # opens the file for reading
+# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'rb') as p:
+#     txt = (p.readlines())
+
+# # get the new list terminating correctly
+# txtx = reset_eof_of_pdf_return_stream(txt)
+
+# # write to new pdf
+# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'wb') as f:
+#     f.writelines(txtx)
 
 """
     Obtengo el modulo que fueron invocados
@@ -82,9 +116,38 @@ if module == "merge_pdf":
     print(pdfs)
 
     for pdf in pdfs:
+
         print(pdf)
+        pdf = pdf.replace("\\", "/")
+        print(pdf)
+        
+        # opens the file for reading
+        with open(pdf, 'rb') as p:
+            txt = (p.readlines())
+
+        # get the new list terminating correctly
+        txtx = reset_eof_of_pdf_return_stream(txt)
+
+        # write to new pdf
+        with open(pdf, 'wb') as f:
+            f.writelines(txtx)
+        # cualqui = ""
+        # try:
+        #     pdf_reader = PdfFileReader(pdf)
+        # except:
+        #     with open(pdf, 'rb') as f:
+        #         cualqui = f.read()[:-1]
+        #     f.close()
+        #     with open(pdf, 'wb') as f:
+        #         f.write(cualqui)
+        #     f.close()
+
+        #     pdf_reader = PdfFileReader(pdf)
+        #     # print(pdf_reader)
         pdf_reader = PdfFileReader(pdf)
+        # print("qwqw")
         for page in range(pdf_reader.getNumPages()):
+            print("awaw")
             pdf_writer.addPage(pdf_reader.getPage(page))
 
         with open(output, 'wb') as fh:
