@@ -48,28 +48,6 @@ def reset_eof_of_pdf_return_stream(pdf_stream_in:list):
     # return the list up to that point
     return pdf_stream_in[:actual_line]
 
-# # opens the file for reading
-# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'rb') as p:
-#     txt = (p.readlines())
-
-# # get the new list terminating correctly
-# txtx = reset_eof_of_pdf_return_stream(txt)
-
-# # write to new pdf
-# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'wb') as f:
-#     f.writelines(txtx)
-
-# # opens the file for reading
-# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'rb') as p:
-#     txt = (p.readlines())
-
-# # get the new list terminating correctly
-# txtx = reset_eof_of_pdf_return_stream(txt)
-
-# # write to new pdf
-# with open('C:/Users/Caleb/Downloads/merge/20100402727-01-F002-00002857.pdf', 'wb') as f:
-#     f.writelines(txtx)
-
 """
     Obtengo el modulo que fueron invocados
 """
@@ -79,13 +57,11 @@ if module == "split_pdf":
     path = GetParams("pdf").replace("/", os.sep)
     folder = GetParams("folder")
     step = GetParams("step") or 1
-    print(step)
     step = int(step)
 
     r = True
     try:
         fname = os.path.splitext(os.path.basename(path))[0]
-        print(fname)
         pdf = PdfFileReader(path)
         page_number = pdf.getNumPages()
         start = 0
@@ -113,41 +89,20 @@ if module == "merge_pdf":
     pdf_writer = PdfFileWriter()
     pdfs = glob.glob(input_ + os.sep + "*.pdf")
     pdfs.sort()
-    print(pdfs)
 
     for pdf in pdfs:
 
-        print(pdf)
         pdf = pdf.replace("\\", "/")
-        print(pdf)
-        
-        # opens the file for reading
+
         with open(pdf, 'rb') as p:
             txt = (p.readlines())
 
-        # get the new list terminating correctly
         txtx = reset_eof_of_pdf_return_stream(txt)
 
-        # write to new pdf
         with open(pdf, 'wb') as f:
             f.writelines(txtx)
-        # cualqui = ""
-        # try:
-        #     pdf_reader = PdfFileReader(pdf)
-        # except:
-        #     with open(pdf, 'rb') as f:
-        #         cualqui = f.read()[:-1]
-        #     f.close()
-        #     with open(pdf, 'wb') as f:
-        #         f.write(cualqui)
-        #     f.close()
-
-        #     pdf_reader = PdfFileReader(pdf)
-        #     # print(pdf_reader)
-        pdf_reader = PdfFileReader(pdf)
-        # print("qwqw")
+        pdf_reader = PdfFileReader(pdf, strict=False)
         for page in range(pdf_reader.getNumPages()):
-            print("awaw")
             pdf_writer.addPage(pdf_reader.getPage(page))
 
         with open(output, 'wb') as fh:
@@ -185,7 +140,6 @@ if module == "read_pdf":
 
             if reader.isEncrypted:
                 reader.decrypt(password)
-            print(reader)
 
             page_number = reader.numPages
 
