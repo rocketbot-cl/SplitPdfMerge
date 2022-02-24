@@ -35,6 +35,18 @@ if cur_path not in sys.path:
 
 
 from PyPDF2 import PdfFileReader, PdfFileWriter
+global txt
+
+def reset_eof_of_pdf_return_stream(pdf_stream_in:list):
+    # find the line position of the EOF
+    for i, x in enumerate(txt[::-1]):
+        if b'%%EOF' in x:
+            actual_line = len(pdf_stream_in)-i
+            print(f'EOF found at line position {-i} = actual {actual_line}, with value {x}')
+            break
+
+    # return the list up to that point
+    return pdf_stream_in[:actual_line]
 
 """
     Obtengo el modulo que fueron invocados
@@ -45,13 +57,11 @@ if module == "split_pdf":
     path = GetParams("pdf").replace("/", os.sep)
     folder = GetParams("folder")
     step = GetParams("step") or 1
-    print(step)
     step = int(step)
 
     r = True
     try:
         fname = os.path.splitext(os.path.basename(path))[0]
-        print(fname)
         pdf = PdfFileReader(path)
         page_number = pdf.getNumPages()
         start = 0
@@ -79,11 +89,19 @@ if module == "merge_pdf":
     pdf_writer = PdfFileWriter()
     pdfs = glob.glob(input_ + os.sep + "*.pdf")
     pdfs.sort()
-    print(pdfs)
 
     for pdf in pdfs:
-        print(pdf)
-        pdf_reader = PdfFileReader(pdf)
+
+        pdf = pdf.replace("\\", "/")
+
+        with open(pdf, 'rb') as p:
+            txt = (p.readlines())
+
+        txtx = reset_eof_of_pdf_return_stream(txt)
+
+        with open(pdf, 'wb') as f:
+            f.writelines(txtx)
+        pdf_reader = PdfFileReader(pdf, strict=False)
         for page in range(pdf_reader.getNumPages()):
             pdf_writer.addPage(pdf_reader.getPage(page))
 
@@ -122,7 +140,6 @@ if module == "read_pdf":
 
             if reader.isEncrypted:
                 reader.decrypt(password)
-            print(reader)
 
             page_number = reader.numPages
 
