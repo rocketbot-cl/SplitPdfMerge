@@ -1,76 +1,70 @@
-
-
-
-
 # SplitPdfMerge
   
-Módulo para dividir y juntar pdfs  
+Module for performing actions with PDF files such as splitting and merging files    
+
+*Read this in other languages: [English](Manual_SplitPdfMerge.md), [Español](Manual_SplitPdfMerge.es.md).*
   
 ![banner](imgs/Banner_SplitPdfMerge.png)
-## Como instalar este módulo
+## How to install this module
   
-__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
+__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
+## How to use this module
+In order to use this module, you have to select the PDF/s to use and execute the functions.
 
 
-## Como usar este módulo
-Para usar este módulo, tienes que proporcionar el o los PDF/s y ejecutar las funciones 
-necesarias.
+## Description of the commands
 
-
-
-## Descripción de los comandos
-
-### Dividir pdf
+### Split Pdf
   
-Divide un pdf 
-|Parámetros|Descripción|ejemplo|
+Split PDF
+|Parameters|Description|example|
 | --- | --- | --- |
-|PDF de entrada|Ruta donde se encuentra el archivo PDF.|C:/Users/User/Downloads/sample.pdf|
-|Path y nombre de la carpeta donde guardar el pdf|Ruta que se desea usar para guardar los PDF resultantes.|C:/Users/User/Desktop/PDF|
-|Cada cuantas páginas dividir|Número que se usará para saber cada cuantas páginas se dividirá el PDF..|1|
+|Path to PDF|Path to PDF file that you want to divide.|C:/Users/User/Downloads/sample.pdf|
+|Path and name of the folder where to save the pdf|Path to use for save the resulting PDFs.|C:/Users/User/Desktop/PDF |
+|Every few pages divide|Number of pages in wich the pace will be set to divide the PDF.|1|
 
-### Combinar pdfs
+### Merge Pdf
   
-Combina pdfs en un pdf común
-|Parámetros|Descripción|ejemplo|
+Merge PDFs 
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de la carpeta con los pdfs|Ruta contenedora de PDF a los cuales combinar.|C:/Users/User/Desktop/PDF|
-|Path y nombre del archivo donde guardar el pdf|Ruta que se desea usar para guardar el PDF.|C:/Users/User/Desktop/PDF/merge.pdf|
+|Folder path with pdfs|Path that contains all PDFs to combine.|C:/Users/User/Desktop/PDF|
+|Path and name of the file where to save the pdf|Path to use for save the resulting PDF.|C:/Users/User/Desktop/PDF/merge.pdf|
 
-### Enctriptar pdf
+### Encrypt Pdf
   
-Agrega una contraseña a un pdf 
-|Parámetros|Descripción|ejemplo|
+Add password to a PDF
+|Parameters|Description|example|
 | --- | --- | --- |
-|PDF a encriptar|Ruta que contiene el PDF para enciptar.|C:/Users/User/Downloads/sample.pdf|
-|Path y nombre del archivo donde guardar el pdf|Ruta que se desea usar para guardar el PDF resultante.|C:/Users/User/Downloads/sample.pdf|
-|Clave|Clave que se desea usar para encriptar.|s3cr3t-p4ss|
+|PDF to encrypt|Path to the PDF that you want to encrypt.|C:/Users/User/Downloads/sample.pdf|
+|Path and name of the file where to save the pdf|Path to use for save the resulting PDF.|C:/Users/User/Downloads/sample.pdf|
+|Password|Password wanted to use in the encryption.|s3cr3t-p4ss|
 
-### Leer pdf Encriptado
+### Read Encrypted Pdf
   
-Lee un pdf con contraseña
-|Parámetros|Descripción|ejemplo|
+Read a pdf with password
+|Parameters|Description|example|
 | --- | --- | --- |
-|PDF encriptado|Ruta donde se encuentra el PDF encriptado.|C:/Users/User/Downloads/sample.pdf|
-|Clave|Clave que se usar para desencriptar.|s3cr3t-p4ss|
-|Asignar resultado a la variable|Variable para guardar el resultado de la lectura del PDF.|pdf_leido|
+|Encrypted PDF|Path where the encrypted PDF is.|C:/Users/User/Downloads/sample.pdf|
+|Password|Password to decrypt the PDF.|s3cr3t-p4ss|
+|Result|Variable to save the result.|pdf_read|
 
-### Desencriptar PDF
+### Decrypt Pdf
   
-Desencriptar PDF con contraseña
-|Parámetros|Descripción|ejemplo|
+Decrypt PDF with a password
+|Parameters|Description|example|
 | --- | --- | --- |
-|PDF encriptado|Ruta donde se encuentra el PDF encriptado.|C:/Users/User/Downloads/sample.pdf|
-|Clave|Clave que se usar para desencriptar.|s3cr3t-p4ss|
-|Guardar PDF desencriptado|Ruta donde guardar el PDF desencriptado.|C:/Users/User/Downloads/output.pdf|
+|Encrypted PDF|Path where the encrypted PDF is.|C:/Users/User/Downloads/sample.pdf|
+|Password|Password to decrypt the PDF.|s3cr3t-p4ss|
+|Save decrypt PDF|Path to save the decrypted PDF.|C:/Users/User/Downloads/output.pdf|
 
-### Dividir pdf en páginas específicas
+### Split Pdf in specific steps
   
-Divide un pdf en un paso específico.
-|Parámetros|Descripción|ejemplo|
+Splits the pdf in a certain pace
+|Parameters|Description|example|
 | --- | --- | --- |
-|PDF de entrada|Ruta donde se encuentra el archivo PDF.|C:/Users/User/Downloads/sample.pdf|
-|Path y nombre de la carpeta donde guardar el pdf|Ruta que se desea usar para guardar los PDF resultantes.|C:/Users/User/Desktop/PDF|
-|Como dividr el PDF|Forma en la cual se desea dividir el PDF.|['1-3', 4-5']|
+|Path to PDF|Path to PDF file that you want to divide.|C:/Users/User/Downloads/sample.pdf|
+|Path and name of the folder where to save the pdf|Path to use for save the resulting PDFs.|C:/Users/User/Desktop/PDF |
+|How to divide the PDF|Steps in wich the PDF will be divided.|['1-3', 4-5']|
