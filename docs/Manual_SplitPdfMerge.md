@@ -68,3 +68,4 @@ Splits the pdf in a certain pace
 |Path to PDF|Path to PDF file that you want to divide.|C:/Users/User/Downloads/sample.pdf|
 |Path and name of the folder where to save the pdf|Path to use for save the resulting PDFs.|C:/Users/User/Desktop/PDF |
 |How to divide the PDF|Steps in wich the PDF will be divided.|['1-3', 4-5']|
+
