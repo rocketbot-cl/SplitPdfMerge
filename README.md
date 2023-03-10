@@ -1,10 +1,8 @@
-
-
-
-
 # SplitPdfMerge
+  
+Module for performing actions with PDF files such as splitting and merging files  
 
-Module to divide and combine PDFs.
+*Read this in other languages: [English](README.md), [Español](README.es.md).*
 
 ## How to install this module
   
@@ -19,25 +17,27 @@ In order to use this module, you have to select the PDF/s to use and execute the
 
 
 1. Split Pdf  
-Split PDF into differents files.
+Split PDF
 
 2. Merge Pdf  
-Merge differents PDFs into one single file.
+Merge PDFs 
 
 3. Encrypt Pdf  
-Add password to a PDF.
+Add password to a PDF
 
 4. Read Encrypted Pdf  
-Read a pdf with password.
+Read a pdf with password
 
 5. Decrypt Pdf  
-Decrypt PDF with a password.
+Decrypt PDF with a password
 
 6. Split Pdf in specific steps  
-Splits the pdf in a certain pace.
+Splits the pdf in a certain pace  
 
 
 
+### Changes
+Thu Feb 24 10:24:45 2022  Merge pull request from rocketbot-cl
 
 ----
 ### OS
