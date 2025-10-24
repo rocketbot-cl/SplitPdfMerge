@@ -34,7 +34,8 @@ if cur_path not in sys.path:
     
 
 
-from PyPDF2 import PdfFileReader, PdfFileWriter
+# from PyPDF2 import PdfFileReader, PdfFileWriter
+from PyPDF2 import PdfReader, PdfWriter
 global txt
 
 def reset_eof_of_pdf_return_stream(pdf_stream_in:list):
@@ -62,16 +63,16 @@ if module == "split_pdf":
     r = True
     try:
         fname = os.path.splitext(os.path.basename(path))[0]
-        pdf = PdfFileReader(path)
-        page_number = pdf.getNumPages()
+        pdf = PdfReader(path)
+        page_number = len(pdf.pages)
         start = 0
         while start < page_number:
             end = start + step
             if end > page_number:
                 end = page_number
-            pdf_writer = PdfFileWriter()
+            pdf_writer = PdfWriter()
             for page in range(start, end):
-                pdf_writer.addPage(pdf.getPage(page))
+                pdf_writer.add_page(pdf.pages[page])
             output_filename = '{}_page_{}.pdf'.format(fname, start + 1)
             start = end
             with open(folder + os.sep + output_filename, 'wb') as out:
@@ -86,7 +87,7 @@ if module == "merge_pdf":
     output = GetParams("output_folder")
 
     output += ".pdf"
-    pdf_writer = PdfFileWriter()
+    pdf_writer = PdfWriter()
     pdfs = glob.glob(input_ + os.sep + "*.pdf")
     pdfs.sort()
 
@@ -101,9 +102,9 @@ if module == "merge_pdf":
 
         with open(pdf, 'wb') as f:
             f.writelines(txtx)
-        pdf_reader = PdfFileReader(pdf, strict=False)
-        for page in range(pdf_reader.getNumPages()):
-            pdf_writer.addPage(pdf_reader.getPage(page))
+        pdf_reader = PdfReader(pdf, strict=False)
+        for page in range(len(pdf_reader.pages)):
+            pdf_writer.add_page(pdf_reader.pages[page])
 
         with open(output, 'wb') as fh:
             pdf_writer.write(fh)
@@ -115,10 +116,10 @@ if module == "encrypt_pdf":
 
     try:
         with open(path, "rb") as pdf:
-            input_pdf = PdfFileReader(pdf)
+            input_pdf = PdfReader(pdf)
 
-            output = PdfFileWriter()
-            output.appendPagesFromReader(input_pdf)
+            output = PdfWriter()
+            output.append(input_pdf)
             output.encrypt(password)
 
             with open(out, "wb") as out_pdf:
@@ -136,16 +137,16 @@ if module == "read_pdf":
     try:
         text = ""
         with open(path, "rb") as pdf:
-            reader = PdfFileReader(pdf)
+            reader = PdfReader(pdf)
 
-            if reader.isEncrypted:
+            if reader.is_encrypted:
                 reader.decrypt(password)
 
-            page_number = reader.numPages
+            page_number = len(reader.pages)
 
             for i in range(page_number):
-                page = reader.getPage(i)
-                text += page.extractText()
+                page = reader.pages[i]
+                text += page.extract_text()
 
         SetVar(result, text)
     except Exception as e:
@@ -160,14 +161,14 @@ if module == "decrypt_pdf":
 
     try:
         try:
-            out = PdfFileWriter()
-            file = PdfFileReader(in_path, password=pass_pdf)
-            if file.isEncrypted:
+            out = PdfWriter()
+            file = PdfReader(in_path, password=pass_pdf)
+            if file.is_encrypted:
 
-                file.decrypt('')
-                for idx in range(file.numPages):
-                    page = file.getPage(idx)
-                    out.addPage(page)
+                file.is_encrypted('')
+                for i in range(len(file.pages)):
+                    page = file.pages[i]
+                    out.add_page(page)
 
                 with open(out_path, "wb") as f:
                     out.write(f)
@@ -193,17 +194,17 @@ if (module == "SplitPdfMergeSpecificStep"):
     step = GetParams("step")
     step = eval(step)
     fname = os.path.splitext(os.path.basename(path))[0]
-    pdf = PdfFileReader(path)
-    page_number = pdf.getNumPages()
+    pdf = PdfReader(path)
+    page_number = len(pdf.pages)
 
     try:
         for each in step:
 
             realStep = each.split("-")
-            pdf_writer = PdfFileWriter()
+            pdf_writer = PdfWriter()
 
             for page in range((int(realStep[0])) - 1, int(realStep[1])):
-                pdf_writer.addPage(pdf.getPage(page))
+                pdf_writer.add_page(pdf.pages[page])
                 output_filename = '{}_page_{}.pdf'.format(fname, f"{realStep[0]}-{realStep[1]}")
 
             with open(folder + os.sep + output_filename, 'wb') as out:
